@@ -82,4 +82,9 @@
     font-family:  -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin:0px;
   }
+  @media(prefers-color-scheme:dark){
+    body{
+      background-color: #1C1C1E;
+    }
+  }
 </style>

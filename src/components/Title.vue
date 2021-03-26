@@ -27,4 +27,9 @@
 	#subreddit{
 		color:#F09D51;
 	}
+	@media(prefers-color-scheme:dark){
+		h1{
+			color:white;
+		}
+	}
 </style>

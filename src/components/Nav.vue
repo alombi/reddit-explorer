@@ -59,6 +59,9 @@
 		border-radius:30px;
 		font-size: 13px
 	}
+	#right > a:nth-child(1){
+		margin-right:0px;
+	}
 	#left > h3{
 		font-size:22px;
 		color:white;
