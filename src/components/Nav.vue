@@ -5,7 +5,7 @@
 		</div>
 		<div id="right">
 			<a @click="sortPerNew">Sort per {{sort}}</a>
-			<a href="">GitHub</a>
+			<a href="https://github.com/alombi/reddit-explorer">GitHub</a>
 		</div>
 	</div>
 </template>
