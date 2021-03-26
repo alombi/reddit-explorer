@@ -1,4 +1,4 @@
-# Project Coyote
+# Reddit explorer
 
 ## Project setup
 ```
