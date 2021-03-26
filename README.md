@@ -1,4 +1,4 @@
-# coyote
+# Project Coyote
 
 ## Project setup
 ```
