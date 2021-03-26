@@ -1,6 +1,6 @@
 <template>
 	<div class="list">
-		<div class="item" v-for="post in posts" :key="post.data.name">
+		<div class="item" v-for="post in posts" :key="post.data.name" @click="()=>openPost(post)">
 			<h3>{{ post.data.title }}</h3>
 			<img :src="post.data.url" />
 		</div>
@@ -12,6 +12,11 @@
 		name:"Posts",
 		props:{
 			posts:Array
+		},
+		methods:{
+			openPost(post){
+				window.open('https://reddit.com' + post.data.permalink, '_blank');
+			}
 		}
 	}
 </script>
