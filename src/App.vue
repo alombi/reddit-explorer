@@ -1,7 +1,7 @@
 <template>
   <Nav :sub="sub" @sortPerNew="refreshSorted" />
   <Title :sub="sub" @changeSub="refresh" />
-  <Posts :posts="posts" />
+  <Posts :posts="posts" :loading="loading" />
 </template>
 
 <script>
@@ -17,7 +17,10 @@
     },
     methods: {
       refresh(newSub){
+        this.loading = true;
         if(newSub != null){
+          this.posts = [];
+          this.sub = newSub
           fetch(`https://www.reddit.com/r/${newSub}/hot.json?limit=100`)
           .then((response) =>{
             response = response.json()
@@ -25,15 +28,18 @@
           })
           .then((data)=>{
             this.posts = data.data.children
-            this.sub = newSub
+            this.loading = false;
           })
           .catch((err)=>{
             console.log('Subreddit not found. ', err)
             window.alert('Subreddit not found!')
+            this.loading = false;
           })
         }
       },
       refreshSorted(){
+        this.loading = true;
+        this.posts = [];
         fetch(`https://www.reddit.com/r/${this.sub}/new.json?limit=100`)
         .then((response) =>{
           response = response.json()
@@ -41,10 +47,12 @@
         })
         .then((data)=>{
           this.posts = data.data.children
+          this.loading = false;
         })
         .catch((err)=>{
           console.log('Subreddit not found. ', err)
           window.alert('Subreddit not found!')
+          this.loading = false;
         })
       }
     },
@@ -56,12 +64,14 @@
       })
       .then((data)=>{
         this.posts = data.data.children
+        this.loading = false;
       })
     },
     data: function() {
       return {
         sub: 'memes',
-        posts : []
+        posts: [],
+        loading: true,
       }
     },
   }

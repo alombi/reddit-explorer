@@ -1,4 +1,5 @@
 <template>
+	<h3 id="loader" v-if="loading">Loading...</h3>
 	<div class="list">
 		<div class="item" v-for="post in posts" :key="post.data.name" @click="()=>openPost(post)">
 			<h3>{{ post.data.title }}</h3>
@@ -11,13 +12,21 @@
 	export default {
 		name:"Posts",
 		props:{
-			posts:Array
+			posts: Array,
+			loading: Boolean
+		},
+		components: {
 		},
 		methods:{
 			openPost(post){
 				window.open('https://reddit.com' + post.data.permalink, '_blank');
 			}
-		}
+		},
+		data: function() {
+			return {
+				loader: true,
+			}
+		},
 	}
 </script>
 
@@ -38,6 +47,10 @@
 		margin:20px;
 		text-align: center;
 		padding: 15px
+	}
+	#loader{
+		text-align: center;
+		padding-top:150px;
 	}
 	@media(max-width:1000px){
 		.list{
