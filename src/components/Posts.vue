@@ -62,5 +62,8 @@
 			background-color: #2C2C2E;
 			color:white;
 		}
+		h3{
+			color:white;
+		}
 	}
 </style>

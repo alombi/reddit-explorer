@@ -53,17 +53,17 @@
 		margin-left:5px;
 		margin-right: 10px;
 		background-color:#313638;
-		padding:10px;
+		padding:9px;
 		color:white;
 		text-decoration: none;
 		border-radius:30px;
-		font-size: 13px
+		font-size: 11.5px
 	}
 	#right > a:nth-child(1){
 		margin-right:0px;
 	}
 	#left > h3{
-		font-size:22px;
+		font-size:19px;
 		color:white;
 		font-weight: 500;
 	}
