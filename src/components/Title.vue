@@ -7,7 +7,7 @@
 	export default {
 		name:"Title",
 		props: {
-			sub:String
+			sub: String
 		},
 		methods: {
 			changeSub() {

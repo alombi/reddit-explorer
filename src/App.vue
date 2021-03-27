@@ -1,6 +1,7 @@
 <template>
   <Nav :sub="sub" @sort="refreshSorted" />
   <Title :sub="sub" @changeSub="refresh" />
+  <Suggestions :sub="sub"  @changeSub="refresh" />
   <Posts :posts="posts" :loading="loading" />
 </template>
 
@@ -8,12 +9,14 @@
   import Title from './components/Title';
   import Posts from './components/Posts';
   import Nav from './components/Nav';
+  import Suggestions from './components/Suggestions';
   export default {
     name: 'App',
     components: {
       Title,
       Posts,
       Nav,
+      Suggestions,
     },
     methods: {
       refresh(newSub){

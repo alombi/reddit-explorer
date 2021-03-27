@@ -34,7 +34,6 @@
 	.list{
 		display:grid;
 		grid-template-columns: repeat(3, 3fr);
-		
 	}
 	img{
 		height:300px;

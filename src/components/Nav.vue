@@ -5,7 +5,7 @@
 		</div>
 		<div id="right">
 			<a @click="sortPerNew">Sort per {{sort}}</a>
-			<a href="https://github.com/alombi/reddit-explorer">GitHub</a>
+			<a href="https://github.com/alombi/reddit-explorer" target="_blank">GitHub</a>
 		</div>
 	</div>
 </template>
@@ -14,7 +14,7 @@
 	export default {
 		name:"Nav",
 		props:{
-			sub:String
+			sub: String
 		},
 		methods:{
 			scrollToTop(){
