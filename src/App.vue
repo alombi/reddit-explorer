@@ -1,5 +1,5 @@
 <template>
-  <Nav :sub="sub" @sortPerNew="refreshSorted" />
+  <Nav :sub="sub" @sort="refreshSorted" />
   <Title :sub="sub" @changeSub="refresh" />
   <Posts :posts="posts" :loading="loading" />
 </template>
@@ -37,10 +37,10 @@
           })
         }
       },
-      refreshSorted(){
+      refreshSorted(sorting){
         this.loading = true;
         this.posts = [];
-        fetch(`https://www.reddit.com/r/${this.sub}/new.json?limit=100`)
+        fetch(`https://www.reddit.com/r/${this.sub}/${sorting}.json?limit=100`)
         .then((response) =>{
           response = response.json()
           return response
@@ -57,7 +57,7 @@
       }
     },
     mounted() {
-      fetch(`https://www.reddit.com/r/memes/hot.json?limit=100`)
+      fetch(`https://www.reddit.com/r/dankmemes/hot.json?limit=100`)
       .then((response) =>{
         response = response.json()
         return response
@@ -69,7 +69,7 @@
     },
     data: function() {
       return {
-        sub: 'memes',
+        sub: 'dankmemes',
         posts: [],
         loading: true,
       }

@@ -21,8 +21,13 @@
 				window.scrollTo(0, 0)
 			},
 			sortPerNew(){
-				this.$emit('sortPerNew')
-				this.sort = 'hot'
+				if(this.sort == 'new'){
+					this.$emit('sort', 'new')
+					this.sort = 'hot'
+				} else{
+					this.$emit('sort', 'hot')
+					this.sort = 'new'
+				}
 			}
 		},
 		data:function(){
