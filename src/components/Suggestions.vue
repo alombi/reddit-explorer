@@ -29,9 +29,15 @@
 		},
 		watch:{
 			sub:function(){
-				document.getElementsByClassName('active')[0].classList.remove('active')
-				var active = document.getElementById(this.sub)
-				active.classList.add('active')
+				try{
+					document.getElementsByClassName('active')[0].classList.remove('active')
+					var active = document.getElementById(this.sub)
+					if(active != null){
+						active.classList.add('active')
+					}
+				}catch{
+					console.log('No activee')
+				}
 			}
 		}
 	}

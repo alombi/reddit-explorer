@@ -1,5 +1,5 @@
 <template>
-  <Nav :sub="sub" @sort="refreshSorted" />
+  <Nav :sub="sub" @sort="refreshSorted" @askRefresh="refresh" />
   <Title :sub="sub" @changeSub="refresh" />
   <Suggestions :sub="sub"  @changeSub="refresh" />
   <Posts :posts="posts" :loading="loading" />
@@ -33,10 +33,10 @@
             this.posts = data.data.children
             this.loading = false;
           })
-          .catch((err)=>{
-            console.log('Subreddit not found. ', err)
-            window.alert('Subreddit not found!')
+          .catch(()=>{
+            console.log('Subreddit not found. ')
             this.loading = false;
+            window.alert('Subreddit not found!')
           })
         }
       },

@@ -1,6 +1,8 @@
 # Reddit explorer
+A web app for browsing image based subreddits. This is my first Vue project, trying to use what I'm learning.
 
-## Project setup
+
+### Project setup
 ```
 npm install
 ```
