@@ -5,7 +5,7 @@
 		<a id="meme" @click="chooseSuggestion">meme</a>
 		<a id="vexillology" @click="chooseSuggestion">vexillology</a>
 		<a id="amoledbackgrounds" @click="chooseSuggestion">amoledbackgrounds</a>
-		<a id="amoledbackgrounds" @click="chooseSuggestion">programmerhumor</a>
+		<a id="programmerhumor" @click="chooseSuggestion">programmerhumor</a>
 		<!-- <a id="macsetups" @click="chooseSuggestion">macsetups</a> -->
 	</div>
 </template>
