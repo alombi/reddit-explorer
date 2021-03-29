@@ -6,7 +6,7 @@
 		<div id="right">
 			<a @click="askRefresh">Refresh</a>
 			<a @click="sortPerNew">Sort per {{sort}}</a>
-			<a href="https://github.com/alombi/reddit-explorer" target="_blank"><ion-icon name="logo-github"></ion-icon></a>
+			<!-- <a href="https://github.com/alombi/reddit-explorer" target="_blank"><ion-icon name="logo-github"></ion-icon></a> -->
 		</div>
 	</div>
 </template>
@@ -71,7 +71,9 @@
 		text-decoration: none;
 		border-radius:30px;
 		font-size: 11.5px;
-		margin-top:2px;
+	}
+	#right > a:nth-child(1){
+		margin-right: 0px;
 	}
 	#left > h3{
 		font-size:19px;
