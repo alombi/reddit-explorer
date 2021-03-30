@@ -1,10 +1,12 @@
 <template>
 	<h3 id="loader" v-if="loading">Loading...</h3>
 	<div class="list">
-		<div class="item" v-for="post in posts" :key="post.data.name" @click="()=>openPost(post)">
+		<a v-for="post in posts" :key="post.data.name" :href="'https://reddit.com' + post.data.permalink" target="_blank">
+		<div class="item" >
 			<h3>{{ post.data.title }}</h3>
 			<img :src="post.data.url" />
 		</div>
+		</a>
 	</div>
 </template>
 
@@ -15,13 +17,6 @@
 			posts: Array,
 			loading: Boolean
 		},
-		components: {
-		},
-		methods:{
-			openPost(post){
-				window.open('https://reddit.com' + post.data.permalink, '_blank');
-			}
-		},
 		data: function() {
 			return {
 				loader: true,
@@ -31,6 +26,10 @@
 </script>
 
 <style>
+	a{
+		text-decoration: none;
+		color:black;
+	}
 	.list{
 		display:grid;
 		grid-template-columns: repeat(3, 3fr);
