@@ -12,7 +12,9 @@
 		methods: {
 			changeSub() {
 				var newSub = window.prompt('Choose a different subreddit');
-				this.$emit('changeSub', newSub)
+				if(newSub != null){
+					this.$emit('changeSub', newSub)
+				}
 			},
 		},
 	}
